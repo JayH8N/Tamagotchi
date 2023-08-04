@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B32A7CD4C00064C258 /* AppDelegate.swift */; };
 		78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B52A7CD4C00064C258 /* SceneDelegate.swift */; };
-		78F247B82A7CD4C00064C258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B72A7CD4C00064C258 /* ViewController.swift */; };
+		78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B72A7CD4C00064C258 /* MainViewController.swift */; };
 		78F247BB2A7CD4C00064C258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F247B92A7CD4C00064C258 /* Main.storyboard */; };
 		78F247BD2A7CD4C10064C258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F247BC2A7CD4C10064C258 /* Assets.xcassets */; };
 		78F247C02A7CD4C10064C258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F247BE2A7CD4C10064C258 /* LaunchScreen.storyboard */; };
+		78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */; };
+		78F247CB2A7CD86E0064C258 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */; };
+		78F247CD2A7CDD6B0064C258 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247CC2A7CDD6B0064C258 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		78F247B02A7CD4C00064C258 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F247B32A7CD4C00064C258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F247B52A7CD4C00064C258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78F247B72A7CD4C00064C258 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78F247B72A7CD4C00064C258 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		78F247BA2A7CD4C00064C258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78F247BC2A7CD4C10064C258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78F247BF2A7CD4C10064C258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78F247C12A7CD4C10064C258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		78F247CC2A7CDD6B0064C258 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 		78F247A72A7CD4C00064C258 = {
 			isa = PBXGroup;
 			children = (
+				78F247C72A7CD8070064C258 /* ViewControllerSwiftFile */,
 				78F247B22A7CD4C00064C258 /* Tamagotchi */,
 				78F247B12A7CD4C00064C258 /* Products */,
 			);
@@ -58,13 +65,23 @@
 			children = (
 				78F247B32A7CD4C00064C258 /* AppDelegate.swift */,
 				78F247B52A7CD4C00064C258 /* SceneDelegate.swift */,
-				78F247B72A7CD4C00064C258 /* ViewController.swift */,
 				78F247B92A7CD4C00064C258 /* Main.storyboard */,
-				78F247BC2A7CD4C10064C258 /* Assets.xcassets */,
+				78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */,
 				78F247BE2A7CD4C10064C258 /* LaunchScreen.storyboard */,
+				78F247BC2A7CD4C10064C258 /* Assets.xcassets */,
 				78F247C12A7CD4C10064C258 /* Info.plist */,
 			);
 			path = Tamagotchi;
+			sourceTree = "<group>";
+		};
+		78F247C72A7CD8070064C258 /* ViewControllerSwiftFile */ = {
+			isa = PBXGroup;
+			children = (
+				78F247B72A7CD4C00064C258 /* MainViewController.swift */,
+				78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */,
+				78F247CC2A7CDD6B0064C258 /* Extension.swift */,
+			);
+			path = ViewControllerSwiftFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +145,7 @@
 				78F247C02A7CD4C10064C258 /* LaunchScreen.storyboard in Resources */,
 				78F247BD2A7CD4C10064C258 /* Assets.xcassets in Resources */,
 				78F247BB2A7CD4C00064C258 /* Main.storyboard in Resources */,
+				78F247CB2A7CD86E0064C258 /* MainCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F247B82A7CD4C00064C258 /* ViewController.swift in Sources */,
+				78F247CD2A7CDD6B0064C258 /* Extension.swift in Sources */,
+				78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,
+				78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

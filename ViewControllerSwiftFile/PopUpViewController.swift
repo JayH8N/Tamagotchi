@@ -8,12 +8,15 @@
 import UIKit
 
 
-
-
+enum CharacterType: Int {
+    case a
+    case b
+    case c
+}
 
 
 class PopUpViewController: UIViewController {
-
+    
     static let identifier = "PopUpViewController"
     
     //값전달
@@ -21,6 +24,7 @@ class PopUpViewController: UIViewController {
     var name: String?
     var intro: String?
     
+    var type: CharacterType?
     
     @IBOutlet var characterImage: UIImageView!
     @IBOutlet var characterName: UILabel!
@@ -91,6 +95,23 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
+        guard let type else {
+            alert()
+            return }
+        
+        //        switch type {
+        //        case .a:
+        //        case .b:
+        //        case .c:
     }
-
+    
+    
+    func alert() {
+        let alert = UIAlertController(title: "존재하지 않는다구~", message: "캐릭터 다시 골라", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+    }
 }

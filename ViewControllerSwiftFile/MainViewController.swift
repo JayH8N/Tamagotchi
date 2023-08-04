@@ -72,6 +72,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let item = tamagotchi.list[indexPath.item]
         vc.callValue(data: item)
         
+        vc.type = CharacterType(rawValue: indexPath.item)
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen

@@ -16,6 +16,8 @@
 		78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */; };
 		78F247CB2A7CD86E0064C258 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */; };
 		78F247CD2A7CDD6B0064C258 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247CC2A7CDD6B0064C258 /* Extension.swift */; };
+		78F247CF2A7CF9F20064C258 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247CE2A7CF9F20064C258 /* Data.swift */; };
+		78F247D12A7D12920064C258 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247D02A7D12920064C258 /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		78F247CC2A7CDD6B0064C258 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		78F247CE2A7CF9F20064C258 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		78F247D02A7D12920064C258 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 			children = (
 				78F247B72A7CD4C00064C258 /* MainViewController.swift */,
 				78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */,
+				78F247D02A7D12920064C258 /* PopUpViewController.swift */,
 				78F247CC2A7CDD6B0064C258 /* Extension.swift */,
+				78F247CE2A7CF9F20064C258 /* Data.swift */,
 			);
 			path = ViewControllerSwiftFile;
 			sourceTree = "<group>";
@@ -157,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F247CD2A7CDD6B0064C258 /* Extension.swift in Sources */,
+				78F247CF2A7CF9F20064C258 /* Data.swift in Sources */,
+				78F247D12A7D12920064C258 /* PopUpViewController.swift in Sources */,
 				78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,

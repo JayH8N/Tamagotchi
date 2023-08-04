@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var tamagotchi = DetailTamagotchi()
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -22,7 +23,7 @@ class MainViewController: UIViewController {
         collectionViewDelegate()
         registerNib()
         configureCollectionViewlayout()
-        collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        collectionView.backgroundColor = themeColor
     }
     
     func collectionViewDelegate() {
@@ -52,15 +53,30 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return tamagotchi.list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
         
-        
+        let item = tamagotchi.list[indexPath.item]
+        cell.setCell(data: item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: PopUpViewController.identifier) as! PopUpViewController
+        
+        let item = tamagotchi.list[indexPath.item]
+        vc.callValue(data: item)
+        
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        
+        present(nav, animated: true)
     }
     
 }

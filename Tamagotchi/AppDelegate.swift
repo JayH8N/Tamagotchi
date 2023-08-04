@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //UIView.appearance().backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        UILabel.appearance().font = UIFont.systemFont(ofSize: 14)
+        UILabel.appearance().font = UIFont.systemFont(ofSize: 13)
         UILabel.appearance().textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         UILabel.appearance().textAlignment = .center
 //        UILabel.appearance().layer.cornerRadius = 15

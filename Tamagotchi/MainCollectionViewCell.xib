@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d63-h6-U3U">
-                        <rect key="frame" x="0.0" y="108" width="100" height="28"/>
+                        <rect key="frame" x="29.333333333333332" y="108" width="41.333333333333343" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="le7-DT-qKH"/>
                         </constraints>
@@ -35,9 +35,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="QIg-qG-Y2w" secondAttribute="trailing" id="AcJ-VN-RB5"/>
-                    <constraint firstItem="QIg-qG-Y2w" firstAttribute="width" secondItem="d63-h6-U3U" secondAttribute="width" id="Q6k-oQ-5hu"/>
-                    <constraint firstItem="d63-h6-U3U" firstAttribute="leading" secondItem="I1C-yS-QYx" secondAttribute="leading" id="XI3-yU-6r5"/>
-                    <constraint firstAttribute="trailing" secondItem="d63-h6-U3U" secondAttribute="trailing" id="hUs-MF-qhW"/>
+                    <constraint firstItem="d63-h6-U3U" firstAttribute="centerX" secondItem="I1C-yS-QYx" secondAttribute="centerX" id="Q91-AA-OUP"/>
+                    <constraint firstItem="d63-h6-U3U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I1C-yS-QYx" secondAttribute="leading" id="XI3-yU-6r5"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d63-h6-U3U" secondAttribute="trailing" id="hUs-MF-qhW"/>
                     <constraint firstAttribute="bottom" secondItem="d63-h6-U3U" secondAttribute="bottom" constant="4" id="lSp-ub-pvD"/>
                     <constraint firstItem="QIg-qG-Y2w" firstAttribute="top" secondItem="I1C-yS-QYx" secondAttribute="top" id="qkZ-Oy-Bw9"/>
                     <constraint firstItem="QIg-qG-Y2w" firstAttribute="leading" secondItem="I1C-yS-QYx" secondAttribute="leading" id="sJ5-mn-Kyg"/>
@@ -48,7 +48,7 @@
                 <outlet property="characterImage" destination="QIg-qG-Y2w" id="Xxt-LQ-iqw"/>
                 <outlet property="characterName" destination="d63-h6-U3U" id="akK-b5-UL2"/>
             </connections>
-            <point key="canvasLocation" x="-711.45038167938924" y="-119.01408450704226"/>
+            <point key="canvasLocation" x="-1136" y="-146"/>
         </collectionViewCell>
     </objects>
 </document>

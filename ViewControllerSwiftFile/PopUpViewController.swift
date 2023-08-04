@@ -99,12 +99,17 @@ class PopUpViewController: UIViewController {
             alert()
             return }
         
-        //        switch type {
-        //        case .a:
-        //        case .b:
-        //        case .c:
+        //화면전환
+        let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
+        
+        vc.type = self.type
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
     }
-    
     
     func alert() {
         let alert = UIAlertController(title: "존재하지 않는다구~", message: "캐릭터 다시 골라", preferredStyle: .alert)

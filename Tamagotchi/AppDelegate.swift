@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UIView.appearance().backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         UILabel.appearance().font = UIFont.systemFont(ofSize: 13)
-        UILabel.appearance().textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        UILabel.appearance().textColor = fontColor
         UILabel.appearance().textAlignment = .center
+        UINavigationBar.appearance().barTintColor = themeColor
 //        UILabel.appearance().layer.cornerRadius = 15
 //        UILabel.appearance().layer.borderWidth = 3
 //        UILabel.appearance().layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor

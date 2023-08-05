@@ -49,7 +49,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         self.setBackgroundColor()
         settingButton()
         setMain()
-        
+        setMention()
         setUIButton(button: feedRiceButton, image: "drop.circle", text: "밥먹기")
         setUIButton(button: feedWaterButton, image: "leaf.circle", text: "물먹기")
         load()
@@ -58,6 +58,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "\(myName)님의 다마고치"
+        setMention()
     }
     
     
@@ -87,6 +88,8 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         feedWater.borderStyle = .none
         feedRice.layer.addBorder([.bottom], width: 0.5)
         feedWater.layer.addBorder([.bottom], width: 0.5)
+        mention.numberOfLines = 0
+        mention.textAlignment = .center
     }
     
     func setUIButton(button: UIButton, image: String, text: String) {
@@ -167,8 +170,26 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         toolBar.isHidden = false
     }
     
+    func setMention() {
+        let lowLevelment = ["\(myName)님, 밥주세요", "좋은 하루입니다?? \(myName)", "\(myName)님, 빨리 달란 말이에요!", "\(myName)야 먹을거주면 친구 해줄게"]
+        let middleLevelment = ["\(myName)야, 심보가 왜그러니? 조금 더줘라", "\(myName), 솔직히 조금만 더 주자?", "빨리 줘 나 목말라, 배고 고파", "\(myName)야 손가락 움직이자?^^"]
+        let highLevelment = ["\(myName)이제 그만 줘, 배부르다.", "\(myName)야 이제 너가 먹어라"]
+        
+        switch level {
+        case 1...3:
+            mention.text = lowLevelment.randomElement()
+        case 4...8:
+            mention.text = middleLevelment.randomElement()
+        case 9...:
+            mention.text = highLevelment.randomElement()
+        default:
+            break
+        }
+    }
+    
     
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
+        setMention()
         let text1 = feedRice.text
         if text1 == "" {
             rice += 1
@@ -180,6 +201,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
+        setMention()
         let text2 = feedWater.text
         if text2 == "" {
             water += 1

@@ -48,7 +48,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugV-WL-eOq">
-                                <rect key="frame" x="176" y="189" width="41.333333333333343" height="20.333333333333343"/>
+                                <rect key="frame" x="106" y="189" width="181" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,6 +128,7 @@
                             <constraint firstItem="dsy-mb-ruI" firstAttribute="top" secondItem="Xtu-Iw-inV" secondAttribute="bottom" constant="4" id="Qqp-zl-W8U"/>
                             <constraint firstItem="Xtu-Iw-inV" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.493639" id="Rft-9C-T49"/>
                             <constraint firstItem="Eo0-IZ-HM0" firstAttribute="top" secondItem="bIB-bF-0ix" secondAttribute="bottom" constant="20" id="UBb-TF-4hg"/>
+                            <constraint firstItem="ugV-WL-eOq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="106" id="URk-8N-m5c"/>
                             <constraint firstItem="pbY-q4-XmH" firstAttribute="top" secondItem="dsy-mb-ruI" secondAttribute="bottom" constant="4" id="bXI-cV-vsd"/>
                             <constraint firstItem="ugV-WL-eOq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="86" id="cBh-45-rgk"/>
                             <constraint firstItem="bIB-bF-0ix" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="fgV-a0-HCt"/>
@@ -137,6 +138,7 @@
                             <constraint firstItem="pbY-q4-XmH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ljA-fM-7Pj"/>
                             <constraint firstItem="Eo0-IZ-HM0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="76" id="peL-GM-sJM"/>
                             <constraint firstItem="ugV-WL-eOq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q4m-qg-Kc4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ugV-WL-eOq" secondAttribute="trailing" constant="106" id="s9I-Nn-asX"/>
                             <constraint firstItem="Xtu-Iw-inV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="54" id="urN-WP-7dx"/>
                         </constraints>
                         <connections>

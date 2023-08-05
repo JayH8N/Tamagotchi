@@ -14,7 +14,16 @@ class TamagotchiMainViewController: UIViewController {
     var type: CharacterType?
     var myName: String = "대장"
         
+    @IBOutlet var mentionImage: UIImageView!
+    @IBOutlet var mention: UILabel!
+    @IBOutlet var characterImage: UIImageView!
+    @IBOutlet var characterName: UILabel!
+    @IBOutlet var characterInfo: UILabel!
     
+    @IBOutlet var feedRice: UITextField!
+    @IBOutlet var feedWater: UITextField!
+    @IBOutlet var feedRiceButton: UIButton!
+    @IBOutlet var feedWaterButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -23,6 +32,10 @@ class TamagotchiMainViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: fontColor]
         self.setBackgroundColor()
         settingButton()
+        setMain()
+        
+        setUIButton(button: feedRiceButton, image: "drop.circle", text: "밥먹기")
+        setUIButton(button: feedWaterButton, image: "leaf.circle", text: "물먹기")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,10 +60,34 @@ class TamagotchiMainViewController: UIViewController {
     }
     
     
+    func setMain() {
+        mentionImage.image = UIImage(named:"bubble")
+        characterName.setUILabel()
+        characterImage.setImageView(characterImage)
+        characterInfo.text = "LV · 밥알 개 · 물방울 개"
+        characterInfo.font = UIFont.boldSystemFont(ofSize: 13)
+        feedRice.borderStyle = .none
+        feedWater.borderStyle = .none
+        feedRice.layer.addBorder([.bottom], width: 0.5)
+        feedWater.layer.addBorder([.bottom], width: 0.5)
+    }
     
-    
-    
-    
+    func setUIButton(button: UIButton, image: String, text: String) {
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.setImage(UIImage(systemName: image), for: .normal)
+        button.tintColor = fontColor
+        button.setTitle(text, for: .normal)
+        button.setTitleColor(fontColor, for: .normal)
+        button.semanticContentAttribute = .forceLeftToRight
+        button.contentVerticalAlignment = .center
+        button.contentHorizontalAlignment = .center
+        button.layer.cornerRadius = 9
+        button.layer.borderColor = borderColor
+        button.layer.borderWidth = 1
+        button.backgroundColor = .clear
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+    }
     
     
     

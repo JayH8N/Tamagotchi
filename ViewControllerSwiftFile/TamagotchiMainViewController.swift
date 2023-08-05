@@ -7,12 +7,13 @@
 
 import UIKit
 
+var myName: String = "대장"
+
 class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     static let identifier = "TamagotchiMainViewController"
 
     var type: CharacterType?
-    var myName: String = "대장"
     
     var level: Int = 1
     var rice: Int = 0 {
@@ -171,9 +172,9 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setMention() {
-        let lowLevelment = ["\(myName)님, 밥주세요", "좋은 하루입니다?? \(myName)", "\(myName)님, 빨리 달란 말이에요!", "\(myName)야 먹을거주면 친구 해줄게"]
-        let middleLevelment = ["\(myName)야, 심보가 왜그러니? 조금 더줘라", "\(myName), 솔직히 조금만 더 주자?", "빨리 줘 나 목말라, 배고 고파", "\(myName)야 손가락 움직이자?^^"]
-        let highLevelment = ["\(myName)이제 그만 줘, 배부르다.", "\(myName)야 이제 너가 먹어라"]
+        let lowLevelment = ["\(myName)님, 밥주세요", "좋은 하루입니다?? \(myName)", "\(myName)님, 빨리 달란 말이에요!", "\(myName)님, 먹을거주면 친구 해줄게"]
+        let middleLevelment = ["\(myName)님, 심보가 왜그러니? 조금 더줘라", "\(myName), 솔직히 조금만 더 주자?", "빨리 줘 나 목말라, 배고파", "\(myName)님 손가락 움직이자?^^"]
+        let highLevelment = ["\(myName)님 이제 그만 줘, 배부르다.", "\(myName)님 이제 님이 드세요"]
         
         switch level {
         case 1...3:
@@ -195,6 +196,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
             rice += 1
         } else if  text1!.allSatisfy({$0.isNumber}) && Int(text1!)! <= 99 {
             rice += Int(text1!)!
+            feedRice.text = ""
         } else {
             self.alertOnly1Button(title: "잘못된 입력입니다.")
         }
@@ -207,6 +209,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
             water += 1
         } else if  text2!.allSatisfy({$0.isNumber}) && Int(text2!)! <= 49 {
             water += Int(text2!)!
+            feedWater.text = ""
         } else {
             self.alertOnly1Button(title: "잘못된 입력입니다.")
         }

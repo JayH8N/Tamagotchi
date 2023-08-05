@@ -21,6 +21,7 @@
 		78F247D32A7D610D0064C258 /* TamagotchiMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F247D22A7D610D0064C258 /* TamagotchiMain.storyboard */; };
 		78F247D52A7D61320064C258 /* TamagotchiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247D42A7D61320064C258 /* TamagotchiMainViewController.swift */; };
 		78F247D72A7D74C50064C258 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247D62A7D74C50064C258 /* SettingViewController.swift */; };
+		78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		78F247D22A7D610D0064C258 /* TamagotchiMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TamagotchiMain.storyboard; sourceTree = "<group>"; };
 		78F247D42A7D61320064C258 /* TamagotchiMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiMainViewController.swift; sourceTree = "<group>"; };
 		78F247D62A7D74C50064C258 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				78F247D02A7D12920064C258 /* PopUpViewController.swift */,
 				78F247D42A7D61320064C258 /* TamagotchiMainViewController.swift */,
 				78F247D62A7D74C50064C258 /* SettingViewController.swift */,
+				78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */,
 				78F247CC2A7CDD6B0064C258 /* Extension.swift */,
 				78F247CE2A7CF9F20064C258 /* Data.swift */,
 			);
@@ -178,6 +181,7 @@
 				78F247D12A7D12920064C258 /* PopUpViewController.swift in Sources */,
 				78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */,
 				78F247D72A7D74C50064C258 /* SettingViewController.swift in Sources */,
+				78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,
 				78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */,

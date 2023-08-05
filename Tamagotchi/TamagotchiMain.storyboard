@@ -16,21 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BMY-OO-WhT">
+                                <rect key="frame" x="99.666666666666686" y="171" width="194" height="388"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXH-mm-bFe">
+                                        <rect key="frame" x="0.0" y="0.0" width="194" height="129.33333333333334"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fXH-mm-bFe" secondAttribute="height" multiplier="3:2" id="gCq-lO-bVs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-mb-ruI">
+                                        <rect key="frame" x="0.0" y="137.33333333333331" width="194" height="194"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dsy-mb-ruI" secondAttribute="height" multiplier="1:1" id="Xyd-bN-QOb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbY-q4-XmH">
+                                        <rect key="frame" x="0.0" y="339.33333333333331" width="194" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-bF-0ix">
+                                        <rect key="frame" x="0.0" y="367.66666666666663" width="194" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fXH-mm-bFe" firstAttribute="width" secondItem="dsy-mb-ruI" secondAttribute="width" id="ipg-fK-swz"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BMY-OO-WhT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="AAu-sh-s1E"/>
+                            <constraint firstItem="BMY-OO-WhT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="68" id="Kmg-kM-8IS"/>
+                            <constraint firstItem="BMY-OO-WhT" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.493639" id="nG8-xH-4pS"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="W6r-eV-1gI">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="HWj-Ua-OlB"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="W6r-eV-1gI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="setting" destination="HWj-Ua-OlB" id="X2e-9k-sh1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="-14"/>
+            <point key="canvasLocation" x="745.80152671755718" y="-14.084507042253522"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="LJm-hQ-9gC">
@@ -67,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpl-6S-8PU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="-14"/>
+            <point key="canvasLocation" x="1720" y="-14"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dqn-Gn-IP0">

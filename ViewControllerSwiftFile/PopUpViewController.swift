@@ -95,7 +95,7 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        guard let type else {
+        guard type != nil else {
             self.alert(title: "존재하지 않는다~", message: "캐릭터 다시 선택해줘")
             return }
         

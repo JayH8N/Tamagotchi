@@ -38,9 +38,7 @@ class NameChangeViewController: UIViewController {
     @objc
     func savingButtonClicked(_ sender: UIBarButtonItem) {
         let text = changeField.text
-        guard let text else {
-            self.alertOnly1Button(title: "입력값 없습니다.\n다시입력해주세요!")
-            return }
+        guard let text else { return }
         
         if text.count >= 2 && text.count <= 6 {
             myName = text

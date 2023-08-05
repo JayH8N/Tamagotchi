@@ -50,10 +50,27 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as! NameChangeViewController
         
-        navigationController?.pushViewController(vc, animated: true)
+        let row = indexPath.row
+        
+        if row == 0 {
+            let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as! NameChangeViewController
+
+            navigationController?.pushViewController(vc, animated: true)
+        } else if row == 1 {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+            
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            
+            present(nav, animated: true)
+        } else {
+            self.alert(title: "데이터초기화", message: "정말 다시 처음부터 시작하실 건가용?")
+        }
+
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }

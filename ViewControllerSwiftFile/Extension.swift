@@ -20,7 +20,7 @@ extension UIViewController {
     func alert(title: String, message: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "Yes", style: .default)
+        let ok = UIAlertAction(title: "Yes", style: .default, handler: nil)
         let cancel = UIAlertAction(title: "No", style: .default)
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -44,6 +44,14 @@ extension UIImageView {
         self.layer.borderColor = borderColor
         self.layer.borderWidth = 2
     }
+}
+
+extension UIButton {
+        func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
+            clipsToBounds = true
+            layer.cornerRadius = cornerRadius
+            layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+        }
 }
 
 extension UILabel {

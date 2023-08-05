@@ -67,6 +67,9 @@ class PopUpViewController: UIViewController {
         cancelButton.layer.addBorder([.top], width: 0.5)
         cancelButton.setTitle("취소", for: .normal)
         cancelButton.tintColor = fontColor
+        cancelButton.backgroundColor = .systemGray5
+        cancelButton.clipsToBounds = true
+        cancelButton.layer.maskedCorners
     }
     
     func setStartButton() {

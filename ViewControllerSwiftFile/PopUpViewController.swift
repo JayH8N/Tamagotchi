@@ -96,7 +96,7 @@ class PopUpViewController: UIViewController {
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
         guard let type else {
-            alert()
+            self.alert(title: "존재하지 않는다~", message: "캐릭터 다시 선택해줘")
             return }
         
         //화면전환
@@ -109,14 +109,5 @@ class PopUpViewController: UIViewController {
         nav.modalPresentationStyle = .fullScreen
         
         present(nav, animated: true)
-    }
-    
-    func alert() {
-        let alert = UIAlertController(title: "존재하지 않는다구~", message: "캐릭터 다시 골라", preferredStyle: .alert)
-        
-        let ok = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(ok)
-        
-        present(alert, animated: true)
     }
 }

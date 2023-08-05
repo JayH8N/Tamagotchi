@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TamagotchiMainViewController: UIViewController {
+class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     static let identifier = "TamagotchiMainViewController"
 
@@ -38,9 +38,12 @@ class TamagotchiMainViewController: UIViewController {
     @IBOutlet var feedRiceButton: UIButton!
     @IBOutlet var feedWaterButton: UIButton!
     
+    @IBOutlet var toolBar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toolBar.isHidden = true
+        feedRice.delegate = self
         self.title = "\(myName)님의 다마고치"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: fontColor]
         self.setBackgroundColor()
@@ -55,7 +58,6 @@ class TamagotchiMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "\(myName)님의 다마고치"
-        
     }
     
     
@@ -64,7 +66,6 @@ class TamagotchiMainViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: settingMark, style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = fontColor
     }
-    
     
     @objc
     func settingButtonClicked(_ sender: UIBarButtonItem) {
@@ -147,7 +148,7 @@ class TamagotchiMainViewController: UIViewController {
         case 80..<90: level = 8
         case 90..<100: level = 9
         case 100...: level = 10
-            self.alert(title: "최고레벨 달성!, 데이터 초기화하고 다시 ㄱ?")
+            self.alert(title: "최고레벨 달성!, 다른 캐릭터 선택 ㄱ?")
         default: break
         }
         
@@ -161,21 +162,42 @@ class TamagotchiMainViewController: UIViewController {
         }
     }
     
+    //1.텍스트필드 편집이 시작될때 (커서가 시작될 때)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        toolBar.isHidden = false
+    }
+    
+    
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
-        if feedRice.text == "" {
+        let text1 = feedRice.text
+        if text1 == "" {
             rice += 1
+        } else if  text1!.allSatisfy({$0.isNumber}) && Int(text1!)! <= 99 {
+            rice += Int(text1!)!
+        } else {
+            self.alertOnly1Button(title: "잘못된 입력입니다.")
         }
     }
     
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
-        if feedWater.text == "" {
+        let text2 = feedWater.text
+        if text2 == "" {
             water += 1
+        } else if  text2!.allSatisfy({$0.isNumber}) && Int(text2!)! <= 49 {
+            water += Int(text2!)!
+        } else {
+            self.alertOnly1Button(title: "잘못된 입력입니다.")
         }
     }
     
+    @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+        toolBar.isHidden = true
+    }
     
-    
-    
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     
 }

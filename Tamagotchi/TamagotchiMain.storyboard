@@ -106,9 +106,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-oi-bG2">
+                                <rect key="frame" x="0.0" y="808" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LBg-NT-NO3"/>
+                                    <barButtonItem title="Done" id="Nry-Ub-zej">
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="Y6W-OH-hqX" id="4mR-vu-xvT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bIB-bF-0ix" firstAttribute="top" secondItem="pbY-q4-XmH" secondAttribute="bottom" constant="4" id="0p5-vM-BOG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Eo0-IZ-HM0" secondAttribute="trailing" constant="76" id="M5C-bU-cwH"/>
@@ -126,6 +139,9 @@
                             <constraint firstItem="ugV-WL-eOq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q4m-qg-Kc4"/>
                             <constraint firstItem="Xtu-Iw-inV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="54" id="urN-WP-7dx"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zJL-Na-eLa" appends="YES" id="JfI-RX-AjP"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="W6r-eV-1gI"/>
@@ -140,9 +156,15 @@
                         <outlet property="feedWaterButton" destination="mWf-hF-ac6" id="UIH-TU-PKY"/>
                         <outlet property="mention" destination="ugV-WL-eOq" id="K77-UF-a2z"/>
                         <outlet property="mentionImage" destination="Xtu-Iw-inV" id="JTI-fC-hmk"/>
+                        <outlet property="toolBar" destination="aQb-oi-bG2" id="kvT-uA-xe9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zJL-Na-eLa">
+                    <connections>
+                        <action selector="tapGesture:" destination="Y6W-OH-hqX" id="UKf-0r-c0R"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="800.76335877862596" y="-14.084507042253522"/>
         </scene>

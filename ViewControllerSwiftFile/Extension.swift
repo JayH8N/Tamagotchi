@@ -20,9 +20,18 @@ extension UIViewController {
     func alert(title: String, message: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "확인", style: .default)
-        let cancel = UIAlertAction(title: "취소", style: .default)
+        let ok = UIAlertAction(title: "Yes", style: .default)
+        let cancel = UIAlertAction(title: "No", style: .default)
         alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+    }
+    
+    func alertOnly1Button(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
         
         present(alert, animated: true)

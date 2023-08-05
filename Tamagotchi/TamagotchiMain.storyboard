@@ -252,7 +252,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpl-6S-8PU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="-14"/>
+            <point key="canvasLocation" x="1764" y="-14"/>
+        </scene>
+        <!--Name Change View Controller-->
+        <scene sceneID="2dw-8V-fzI">
+            <objects>
+                <viewController storyboardIdentifier="NameChangeViewController" id="DJz-8M-qp2" customClass="NameChangeViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Z9-eB-USN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e94-ab-L8W">
+                                <rect key="frame" x="20" y="131" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="z80-kd-Qkf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gEn-sf-t9q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gEn-sf-t9q" firstAttribute="trailing" secondItem="e94-ab-L8W" secondAttribute="trailing" constant="20" id="4T6-w8-O4m"/>
+                            <constraint firstItem="e94-ab-L8W" firstAttribute="leading" secondItem="gEn-sf-t9q" secondAttribute="leading" constant="20" id="YFD-eK-z7P"/>
+                            <constraint firstItem="e94-ab-L8W" firstAttribute="centerX" secondItem="1Z9-eB-USN" secondAttribute="centerX" id="jBz-Zy-wRf"/>
+                            <constraint firstItem="e94-ab-L8W" firstAttribute="top" secondItem="gEn-sf-t9q" secondAttribute="top" constant="72" id="kum-8D-iOO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeField" destination="e94-ab-L8W" id="6AP-Aq-jzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kP-2M-OwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2556" y="-14"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dqn-Gn-IP0">

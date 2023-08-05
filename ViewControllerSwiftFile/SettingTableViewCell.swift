@@ -20,6 +20,8 @@ class SettingTableViewCell: UITableViewCell {
         super.awakeFromNib()
        setCell()
     }
+    
+    
 
     
     func setCell() {

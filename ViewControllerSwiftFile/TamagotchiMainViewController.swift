@@ -7,7 +7,10 @@
 
 import UIKit
 
-var myName: String = "대장"
+var myName: String = "대장" {
+    didSet {
+    }
+}
 
 class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     

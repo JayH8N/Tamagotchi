@@ -49,4 +49,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as! NameChangeViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

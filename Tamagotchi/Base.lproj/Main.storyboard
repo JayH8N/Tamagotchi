@@ -75,14 +75,22 @@
                                             <constraint firstAttribute="width" secondItem="rEv-5Q-rYS" secondAttribute="height" multiplier="1:1" id="p9S-7p-0Nf"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smR-hx-0pJ">
-                                        <rect key="frame" x="134" y="209" width="41.333333333333343" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smR-hx-0pJ" customClass="PaddingLabel" customModule="Tamagotchi" customModuleProvider="target">
+                                        <rect key="frame" x="131" y="209" width="47.333333333333343" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="3pb-X4-SiD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-XC-SXI">
                                         <rect key="frame" x="0.0" y="447" width="309" height="40"/>
@@ -187,6 +195,11 @@
             <point key="canvasLocation" x="-949" y="-77"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="smR-hx-0pJ">
+            <size key="intrinsicContentSize" width="47.333333333333336" height="28.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

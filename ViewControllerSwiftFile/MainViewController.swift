@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let titleBool = UserDefaults.standard.bool( forKey: "changeCharacter")
+        let titleBool = UserDefaults.standard.bool( forKey: ForKey.changeCharacter.rawValue)
         if titleBool == false {
             self.title = "다마고치 선택하기"
         } else {

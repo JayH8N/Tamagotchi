@@ -23,14 +23,22 @@
                             <constraint firstAttribute="width" secondItem="QIg-qG-Y2w" secondAttribute="height" multiplier="1:1" id="cNO-mM-uBd"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d63-h6-U3U">
-                        <rect key="frame" x="29.333333333333332" y="108" width="41.333333333333343" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d63-h6-U3U" customClass="PaddingLabel" customModule="Tamagotchi" customModuleProvider="target">
+                        <rect key="frame" x="26.333333333333332" y="108" width="47.333333333333343" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="le7-DT-qKH"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
                 </subviews>
                 <constraints>
@@ -51,4 +59,9 @@
             <point key="canvasLocation" x="-1136" y="-146"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="d63-h6-U3U">
+            <size key="intrinsicContentSize" width="47.333333333333336" height="28.333333333333332"/>
+        </designable>
+    </designables>
 </document>

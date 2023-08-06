@@ -30,6 +30,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.rowHeight = 48
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -44,6 +48,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.settingTitle.text = list[row]
         if row != 0 {
             cell.changedName.text = ""
+        } else {
+            cell.changedName.text = myName
         }
         
         return cell
@@ -61,8 +67,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         } else if row == 1 {
             
-            UserDefaults.standard.set(true, forKey: "changeCharacter")
-            //didSelect했을시에 true값으로 변경되며--> 팝업뷰 title 및 버튼문구 변경되게 할것
+            UserDefaults.standard.set(true, forKey: ForKey.changeCharacter.rawValue)
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
             

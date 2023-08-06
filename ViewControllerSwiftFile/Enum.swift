@@ -24,4 +24,6 @@ enum ForKey: String {
     case water2 = "2번 물"
     case rice3 = "3번 밥"
     case water3 = "3번 물"
+    case isLaunched = "isLaunched"
+    case changeCharacter = "changeCharacter"
 }

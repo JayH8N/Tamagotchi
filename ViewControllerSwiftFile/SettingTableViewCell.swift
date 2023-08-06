@@ -32,7 +32,7 @@ class SettingTableViewCell: UITableViewCell {
         changedName.font = UIFont.systemFont(ofSize: 13)
         settingTitle.font = UIFont.boldSystemFont(ofSize: 14)
         settingTitle.textColor = .black
-        changedName.text = myName
+        //changedName.text = myName
     }
     
 

@@ -71,7 +71,7 @@ class PopUpViewController: UIViewController {
     
     func setStartButton() {
         startButton.layer.addBorder([.top], width: 0.5)
-        let titleBool = UserDefaults.standard.bool( forKey: "changeCharacter")
+        let titleBool = UserDefaults.standard.bool( forKey: ForKey.changeCharacter.rawValue)
         if titleBool == false {
             startButton.setTitle("시작하기", for: .normal)
         } else {
@@ -100,7 +100,7 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: "isLaunched")
+        UserDefaults.standard.set(true, forKey: ForKey.isLaunched.rawValue)
         guard let type else {
             self.alert(title: "존재하지 않는다~", message: "캐릭터 다시 선택해줘")
             return }

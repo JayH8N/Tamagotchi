@@ -7,29 +7,28 @@
 
 import UIKit
 
-var myName: String = "대장" {
-    didSet {
-    }
-}
+var myName: String = "대장"
 
 class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     static let identifier = "TamagotchiMainViewController"
-
-    var type: CharacterType?
+    
+    var type = 0
+    
     
     var level: Int = 1
-    var rice: Int = 0 {
+    var rice = UserDefaults.standard.integer(forKey: ForKey.rice1.rawValue) {
         didSet{
             feeding()
+            UserDefaults.standard.set(rice, forKey: ForKey.rice1.rawValue)
         }
     }
-    var water: Int = 0 {
+    var water = UserDefaults.standard.integer(forKey: ForKey.water1.rawValue) {
         didSet{
             feeding()
+            UserDefaults.standard.set(water, forKey: ForKey.water1.rawValue)
         }
     }
-    
         
     @IBOutlet var mentionImage: UIImageView!
     @IBOutlet var mention: UILabel!
@@ -46,6 +45,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        type = UserDefaults.standard.integer(forKey: "type")
         toolBar.isHidden = true
         feedRice.delegate = self
         self.title = "\(myName)님의 다마고치"
@@ -60,9 +60,12 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         setTextField()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         self.title = "\(myName)님의 다마고치"
         setMention()
+        characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
+        characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
     }
     
     
@@ -122,14 +125,14 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     func load() {
         switch type {
-        case .a:
-            characterImage.image = UIImage(named: "\(CharacterType.a.rawValue + 1)-1")
-            characterName.text = "따끈따끈 다마고치"
-        case .b:
-            characterImage.image = UIImage(named: "\(CharacterType.b.rawValue + 1)-1")
+        case 0:
+            characterImage.image = UIImage(named: "1-1")
+            characterName.text = "따끔따끔 다마고치"
+        case 1:
+            characterImage.image = UIImage(named: "2-1")
             characterName.text = "방실방실 다마고치"
-        case .c:
-            characterImage.image = UIImage(named: "\(CharacterType.c.rawValue + 1)-1")
+        case 2:
+            characterImage.image = UIImage(named: "3-1")
             characterName.text = "반짝반짝 다마고치"
         default:
             break
@@ -155,17 +158,19 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         case 80..<90: level = 8
         case 90..<100: level = 9
         case 100...: level = 10
-            self.alert(title: "최고레벨 달성!, 다른 캐릭터 선택 ㄱ?")
         default: break
         }
         
+        let result = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
+        UserDefaults.standard.set(result, forKey: ForKey.result1.rawValue)
+        
         if level == 10 {
-            characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
+            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
             level = 9
-            characterImage.image = UIImage(named: "\(type!.rawValue + 1)-\(level)")
+            characterImage.image = UIImage(named: "\(type + 1)-\(level)")
         } else {
-            characterImage.image = UIImage(named: "\(type!.rawValue + 1)-\(level)")
-            characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
+            characterImage.image = UIImage(named: "\(type + 1)-\(level)")
+            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
         }
     }
     
@@ -226,6 +231,4 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    
-    
 }

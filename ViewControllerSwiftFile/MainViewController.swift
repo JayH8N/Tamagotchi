@@ -29,6 +29,15 @@ class MainViewController: UIViewController {
         collectionView.backgroundColor = themeColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let titleBool = UserDefaults.standard.bool( forKey: "changeCharacter")
+        if titleBool == false {
+            self.title = "다마고치 선택하기"
+        } else {
+            self.title = "다마고치 변경하기"
+        }
+    }
+    
     func collectionViewDelegate() {
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -69,18 +78,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: PopUpViewController.identifier) as! PopUpViewController
-        
+        let popUpView = self.storyboard?.instantiateViewController(withIdentifier: PopUpViewController.identifier) as! PopUpViewController
+
         let item = tamagotchi.list[indexPath.item]
-        vc.callValue(data: item)
+        popUpView.callValue(data: item)
         
-        vc.type = CharacterType(rawValue: indexPath.item)
+        popUpView.type = CharacterType(rawValue: indexPath.item)
         
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .overFullScreen
         
-        present(nav, animated: true)
+        popUpView.modalPresentationStyle = .overFullScreen
+        present(popUpView, animated: true)
     }
     
 }

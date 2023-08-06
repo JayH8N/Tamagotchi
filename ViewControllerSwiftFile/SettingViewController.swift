@@ -60,19 +60,40 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             navigationController?.pushViewController(vc, animated: true)
             
         } else if row == 1 {
+            
+            UserDefaults.standard.set(true, forKey: "changeCharacter")
+            //didSelect했을시에 true값으로 변경되며--> 팝업뷰 title 및 버튼문구 변경되게 할것
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
             
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            
-            present(nav, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
             
         } else {
-            self.alert(title: "데이터초기화", message: "정말 다시 처음부터 시작하실 건가용?")
+            self.alert(title: "데이터초기화", message: "정말 다시 처음부터 시작하실 건가용?", handler: {action in self.reset()})
         }
 
         tableView.reloadRows(at: [indexPath], with: .none)
     }
+    
+    
+    func reset() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+        
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalTransitionStyle = .crossDissolve
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+        
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+                    UserDefaults.standard.removeObject(forKey: key.description)
+                }
+    }
+    
+    
+    
+    
     
 }

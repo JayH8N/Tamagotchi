@@ -8,13 +8,6 @@
 import UIKit
 
 
-enum CharacterType: Int {
-    case a
-    case b
-    case c
-}
-
-
 class PopUpViewController: UIViewController {
     
     static let identifier = "PopUpViewController"
@@ -48,6 +41,10 @@ class PopUpViewController: UIViewController {
         callValue()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setStartButton()
+    }
+    
     func setPopUpView() {
         popUpView.setUIview()
         popUpView.layer.cornerRadius = 10
@@ -69,12 +66,17 @@ class PopUpViewController: UIViewController {
         cancelButton.tintColor = fontColor
         cancelButton.backgroundColor = .systemGray5
         cancelButton.clipsToBounds = true
-        cancelButton.layer.maskedCorners
+        cancelButton.roundCorners(cornerRadius: 10, maskedCorners: [.layerMinXMaxYCorner])
     }
     
     func setStartButton() {
         startButton.layer.addBorder([.top], width: 0.5)
-        startButton.setTitle("시작하기", for: .normal)
+        let titleBool = UserDefaults.standard.bool( forKey: "changeCharacter")
+        if titleBool == false {
+            startButton.setTitle("시작하기", for: .normal)
+        } else {
+            startButton.setTitle("변경하기", for: .normal)
+        }
         startButton.tintColor = fontColor
     }
     
@@ -98,19 +100,20 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        guard type != nil else {
+        UserDefaults.standard.set(true, forKey: "isLaunched")
+        guard let type else {
             self.alert(title: "존재하지 않는다~", message: "캐릭터 다시 선택해줘")
             return }
         
         //화면전환
         let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
+        let main = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
         
-        vc.type = self.type
+        main.type = type.rawValue
+        UserDefaults.standard.set(main.type, forKey: "type")
         
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        
-        present(nav, animated: true)
+        let nav = UINavigationController(rootViewController: main)
+        nav.modalPresentationStyle = .overFullScreen
+        present(nav, animated: false)
     }
 }

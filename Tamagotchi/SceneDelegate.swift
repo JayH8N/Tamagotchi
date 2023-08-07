@@ -19,13 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let isLaunched = UserDefaults.standard.bool(forKey: ForKey.isLaunched.rawValue)
-        print(isLaunched) //false
+        print(isLaunched)
         
         if isLaunched == false {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
-            
-            window?.rootViewController = vc
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//
+            //window?.rootViewController = vc
         } else {
             let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController

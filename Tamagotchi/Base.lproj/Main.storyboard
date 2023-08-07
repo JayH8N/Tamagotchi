@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SjL-6l-LKw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fox-5k-w33">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pxz-Ev-TAF">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ma6-tP-bMH">
                                     <size key="itemSize" width="203" height="197"/>
@@ -46,7 +46,7 @@
                             <constraint firstItem="Pxz-Ev-TAF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C1P-CN-eh7"/>
                             <constraint firstItem="Pxz-Ev-TAF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XYP-gm-YPf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pxz-Ev-TAF" secondAttribute="trailing" id="ZXn-eE-OjU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pxz-Ev-TAF" secondAttribute="bottom" id="sLM-Lf-NiB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pxz-Ev-TAF" secondAttribute="bottom" constant="-34" id="sLM-Lf-NiB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vz0-Zl-OPh"/>
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="-77"/>
+            <point key="canvasLocation" x="1559.5419847328244" y="-100"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="MTA-wi-dBs">
@@ -76,7 +76,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smR-hx-0pJ" customClass="PaddingLabel" customModule="Tamagotchi" customModuleProvider="target">
-                                        <rect key="frame" x="131" y="209" width="47.333333333333343" height="28"/>
+                                        <rect key="frame" x="134" y="209" width="41.333333333333343" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="3pb-X4-SiD"/>
                                         </constraints>
@@ -174,30 +174,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAd-LG-DPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="-77"/>
+            <point key="canvasLocation" x="2510.6870229007632" y="-100"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sgb-fW-Fiy">
+        <scene sceneID="pLM-UY-fXu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SjL-6l-LKw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fox-5k-w33" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xfe-Fv-q6m">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nM3-HA-TCd">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lW5-Xx-U7Q"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Fhd-NL-g8Q"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v81-ig-BDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BA6-r0-lVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-949" y="-77"/>
+            <point key="canvasLocation" x="632.82442748091603" y="-100"/>
         </scene>
     </scenes>
     <designables>
         <designable name="smR-hx-0pJ">
-            <size key="intrinsicContentSize" width="47.333333333333336" height="28.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>

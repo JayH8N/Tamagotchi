@@ -17,19 +17,53 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     
     var level: Int = 1
-    var rice = UserDefaults.standard.integer(forKey: ForKey.rice1.rawValue) {
-        didSet{
+    var rice: Int = 0 {
+        didSet {
             feeding()
+            setValueRice()
+        }
+    }
+    var water: Int = 0 {
+        didSet {
+            feeding()
+            setValueWater()
+        }
+    }
+
+    func basicValue() {
+        if type == 0 {
+            rice = UserDefaults.standard.integer(forKey: ForKey.rice1.rawValue)
+            water = UserDefaults.standard.integer(forKey: ForKey.water1.rawValue)
+        } else if type == 1 {
+            rice = UserDefaults.standard.integer(forKey: ForKey.rice2.rawValue)
+            water = UserDefaults.standard.integer(forKey: ForKey.water2.rawValue)
+        } else {
+            rice = UserDefaults.standard.integer(forKey: ForKey.rice3.rawValue)
+            water = UserDefaults.standard.integer(forKey: ForKey.water3.rawValue)
+        }
+    }
+    
+    func setValueRice() {
+        if type == 0 {
             UserDefaults.standard.set(rice, forKey: ForKey.rice1.rawValue)
+        } else if type == 1 {
+            UserDefaults.standard.set(rice, forKey: ForKey.rice2.rawValue)
+        } else {
+            UserDefaults.standard.set(rice, forKey: ForKey.rice3.rawValue)
         }
     }
-    var water = UserDefaults.standard.integer(forKey: ForKey.water1.rawValue) {
-        didSet{
-            feeding()
+    
+    func setValueWater() {
+        if type == 0 {
             UserDefaults.standard.set(water, forKey: ForKey.water1.rawValue)
+        } else if type == 1 {
+            UserDefaults.standard.set(water, forKey: ForKey.water2.rawValue)
+        } else {
+            UserDefaults.standard.set(water, forKey: ForKey.water3.rawValue)
         }
     }
-        
+    
+    
     @IBOutlet var mentionImage: UIImageView!
     @IBOutlet var mention: UILabel!
     @IBOutlet var characterImage: UIImageView!
@@ -48,8 +82,10 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         type = UserDefaults.standard.integer(forKey: "type")
         toolBar.isHidden = true
         feedRice.delegate = self
+        feedWater.delegate = self
         self.title = "\(myName)님의 다마고치"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: fontColor]
+        self.navigationController?.navigationBar.layer.addBorder([.bottom], width: 0.3)
         self.setBackgroundColor()
         settingButton()
         setMain()
@@ -58,14 +94,23 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         setUIButton(button: feedWaterButton, image: "leaf.circle", text: "물먹기")
         load()
         setTextField()
+        basicValue()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "\(myName)님의 다마고치"
         setMention()
-        characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
-        characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
+        var x = ""
+        if type == 0 {
+            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
+        } else if type == 1 {
+            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result2.rawValue)
+        } else {
+            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result3.rawValue)
+        }
+        //characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
+        print(water)
     }
     
     
@@ -89,6 +134,13 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         mentionImage.image = UIImage(named:"bubble")
         characterName.setUILabel()
         characterImage.setImageView(characterImage)
+//        if type == 0 {
+//            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
+//        } else if type == 1 {
+//            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result2.rawValue)
+//        } else {
+//            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result3.rawValue)
+//        }
         characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
         characterInfo.font = UIFont.boldSystemFont(ofSize: 13)
         feedRice.borderStyle = .none
@@ -162,15 +214,30 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
         
         let result = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
-        UserDefaults.standard.set(result, forKey: ForKey.result1.rawValue)
+        if type == 0 {
+            UserDefaults.standard.set(result, forKey: ForKey.result1.rawValue)
+        } else if type == 1 {
+            UserDefaults.standard.set(result, forKey: ForKey.result2.rawValue)
+        } else {
+            UserDefaults.standard.set(result, forKey: ForKey.result3.rawValue)
+        }
+        
+        var x = ""
+        if type == 0 {
+            x = ForKey.result1.rawValue
+        } else if type == 1{
+            x = ForKey.result2.rawValue
+        } else {
+            x = ForKey.result3.rawValue
+        }
         
         if level == 10 {
-            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
+            characterInfo.text = UserDefaults.standard.string(forKey: x)
             level = 9
             characterImage.image = UIImage(named: "\(type + 1)-\(level)")
         } else {
             characterImage.image = UIImage(named: "\(type + 1)-\(level)")
-            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
+            characterInfo.text = UserDefaults.standard.string(forKey: x)
         }
     }
     

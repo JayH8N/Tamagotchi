@@ -102,7 +102,7 @@ class PopUpViewController: UIViewController {
     @IBAction func startButtonClicked(_ sender: UIButton) {
         UserDefaults.standard.set(true, forKey: ForKey.isLaunched.rawValue)
         guard let type else {
-            self.alert(title: "존재하지 않는다~", message: "캐릭터 다시 선택해줘")
+            self.alert(title: "존재하지 않는다구~", handler: {action in self.firstViewBack()})
             return }
         
         //화면전환
@@ -115,5 +115,16 @@ class PopUpViewController: UIViewController {
         let nav = UINavigationController(rootViewController: main)
         nav.modalPresentationStyle = .overFullScreen
         present(nav, animated: false)
+    }
+    func firstViewBack() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+        
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalTransitionStyle = .crossDissolve
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
     }
 }

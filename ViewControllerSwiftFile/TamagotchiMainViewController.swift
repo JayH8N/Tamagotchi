@@ -263,30 +263,39 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    enum FeedError: Error {
+        case isNOtIntRange
+    }
     
-    @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
+    func validateUserInputError(text: String, range: Int) throws -> () {
         setMention()
-        let text1 = feedRice.text
-        if text1 == "" {
+        let text = text
+        if text == "" {
             rice += 1
-        } else if  text1!.allSatisfy({$0.isNumber}) && Int(text1!)! <= 99 {
-            rice += Int(text1!)!
+        } else if  text.allSatisfy({$0.isNumber}) && Int(text)! <= range {
+            rice += Int(text)!
             feedRice.text = ""
         } else {
-            self.alertOnly1Button(title: "잘못된 입력입니다.")
+            throw FeedError.isNOtIntRange
         }
     }
     
+    @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
+        do {
+            try validateUserInputError(text: feedRice.text!, range: 99)
+        }
+        catch {
+            alertOnly1Button(title: "잘못된 입력입니다.")
+        }
+    }
+    
+    
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
-        setMention()
-        let text2 = feedWater.text
-        if text2 == "" {
-            water += 1
-        } else if  text2!.allSatisfy({$0.isNumber}) && Int(text2!)! <= 49 {
-            water += Int(text2!)!
-            feedWater.text = ""
-        } else {
-            self.alertOnly1Button(title: "잘못된 입력입니다.")
+        do {
+            try validateUserInputError(text: feedWater.text!, range: 49)
+        }
+        catch {
+            alertOnly1Button(title: "잘못된 입력입니다.")
         }
     }
     

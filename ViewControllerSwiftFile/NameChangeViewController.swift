@@ -35,18 +35,27 @@ class NameChangeViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = fontColor
     }
     
-    @objc
-    func savingButtonClicked(_ sender: UIBarButtonItem) {
-        let text = changeField.text
-        guard let text else { return }
-        
+    enum NameError: Error {
+        case isNotRange
+    }
+    
+    func nameChangeError(text: String) throws -> () {
         if text.count >= 2 && text.count <= 6 {
             myName = text
+            navigationController?.popViewController(animated: true)
         } else {
-            self.alertOnly1Button(title: "2글자 이상 6글자 이하로\n입력해주세요!")
+            throw NameError.isNotRange
         }
-        
-        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @objc
+    func savingButtonClicked(_ sender: UIBarButtonItem) {
+        do {
+            try nameChangeError(text: changeField.text!)
+        } catch {
+            alertOnly1Button(title: "2글자 이상 6글자 이하로\n입력해주세요!")
+        }
     }
 
 }

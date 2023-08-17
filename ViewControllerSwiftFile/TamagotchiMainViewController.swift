@@ -96,6 +96,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.title = "\(myName)님의 다마고치"
         setMention()
         var x = ""

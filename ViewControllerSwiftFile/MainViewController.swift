@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let titleBool = UserDefaults.standard.bool( forKey: ForKey.changeCharacter.rawValue)
         print("1")
         if titleBool == false {

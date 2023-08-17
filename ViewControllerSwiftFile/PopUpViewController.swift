@@ -71,7 +71,7 @@ class PopUpViewController: UIViewController {
     func setStartButton() {
         startButton.layer.addBorder([.top], width: 0.5)
         let titleBool = UserDefaults.standard.bool( forKey: ForKey.changeCharacter.rawValue)
-        if titleBool == false {
+        if !titleBool {
             startButton.setTitle("시작하기", for: .normal)
         } else {
             startButton.setTitle("변경하기", for: .normal)

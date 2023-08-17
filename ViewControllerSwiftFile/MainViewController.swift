@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         let titleBool = UserDefaults.standard.bool( forKey: ForKey.changeCharacter.rawValue)
         print("1")
-        if titleBool == false {
+        if !titleBool {
             self.title = "다마고치 선택하기"
         } else {
             self.title = "다마고치 변경하기"

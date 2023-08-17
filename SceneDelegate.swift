@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let isLaunched = UserDefaults.standard.bool(forKey: ForKey.isLaunched.rawValue)
         print(isLaunched)
         
-        if isLaunched == false {
+        if !isLaunched {
 //            let sb = UIStoryboard(name: "Main", bundle: nil)
 //            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
 //

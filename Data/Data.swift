@@ -5,7 +5,7 @@
 //  Created by hoon on 2023/08/04.
 //
 
-import Foundation
+import UIKit
 
 
 struct Tamagotchi {
@@ -30,3 +30,8 @@ struct DetailTamagotchi {
         }
     }
 }
+
+let themeColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+let borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+let fontColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+

@@ -80,7 +80,9 @@ class PopUpViewController: UIViewController {
     }
     
     func callValue() {
-        guard let image, let name, let intro else { return }
+        guard let image, let name, let intro else {
+            characterImage.image = UIImage(systemName: "questionmark")
+            return }
         characterImage.image = UIImage(named: image)
         characterName.text = name
         introduction.text = intro

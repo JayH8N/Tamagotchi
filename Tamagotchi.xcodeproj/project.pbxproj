@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		787856C22A8E100500246CE0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856C12A8E100500246CE0 /* Protocol.swift */; };
 		78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B32A7CD4C00064C258 /* AppDelegate.swift */; };
 		78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B52A7CD4C00064C258 /* SceneDelegate.swift */; };
 		78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247B72A7CD4C00064C258 /* MainViewController.swift */; };
@@ -24,10 +25,11 @@
 		78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */; };
 		78F247E12A7E8CC40064C258 /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E02A7E8CC40064C258 /* NameChangeViewController.swift */; };
 		78F247E32A7EC7EF0064C258 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E22A7EC7EF0064C258 /* Enum.swift */; };
-		78F247E52A7FE8500064C258 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E42A7FE8500064C258 /* Class.swift */; };
+		78F247E52A7FE8500064C258 /* Class + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E42A7FE8500064C258 /* Class + UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		787856C12A8E100500246CE0 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		78F247B02A7CD4C00064C258 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F247B32A7CD4C00064C258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F247B52A7CD4C00064C258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +49,7 @@
 		78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		78F247E02A7E8CC40064C258 /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
 		78F247E22A7EC7EF0064C258 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
-		78F247E42A7FE8500064C258 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		78F247E42A7FE8500064C258 /* Class + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class + UILabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		787856BF2A8E0F3C00246CE0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				78F247CC2A7CDD6B0064C258 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		787856C02A8E0F9B00246CE0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				787856C12A8E100500246CE0 /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		787856C32A8E128E00246CE0 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				78F247E22A7EC7EF0064C258 /* Enum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		787856C42A8E13D600246CE0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				78F247CE2A7CF9F20064C258 /* Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		787856C52A8E13F000246CE0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				78F247E42A7FE8500064C258 /* Class + UILabel.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		787856C62A8E142200246CE0 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				78F247B92A7CD4C00064C258 /* Main.storyboard */,
+				78F247D22A7D610D0064C258 /* TamagotchiMain.storyboard */,
+				78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */,
+				78F247BE2A7CD4C10064C258 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		78F247A72A7CD4C00064C258 = {
 			isa = PBXGroup;
 			children = (
+				78F247B32A7CD4C00064C258 /* AppDelegate.swift */,
+				78F247B52A7CD4C00064C258 /* SceneDelegate.swift */,
+				78F247BC2A7CD4C10064C258 /* Assets.xcassets */,
+				78F247C12A7CD4C10064C258 /* Info.plist */,
 				78F247C72A7CD8070064C258 /* ViewControllerSwiftFile */,
-				78F247B22A7CD4C00064C258 /* Tamagotchi */,
+				787856C62A8E142200246CE0 /* StoryBoard */,
+				787856C52A8E13F000246CE0 /* Class */,
+				787856C42A8E13D600246CE0 /* Data */,
+				787856C32A8E128E00246CE0 /* Enum */,
+				787856C02A8E0F9B00246CE0 /* Protocol */,
+				787856BF2A8E0F3C00246CE0 /* Extension */,
 				78F247B12A7CD4C00064C258 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,35 +140,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78F247B22A7CD4C00064C258 /* Tamagotchi */ = {
-			isa = PBXGroup;
-			children = (
-				78F247B32A7CD4C00064C258 /* AppDelegate.swift */,
-				78F247B52A7CD4C00064C258 /* SceneDelegate.swift */,
-				78F247B92A7CD4C00064C258 /* Main.storyboard */,
-				78F247D22A7D610D0064C258 /* TamagotchiMain.storyboard */,
-				78F247C92A7CD86E0064C258 /* MainCollectionViewCell.xib */,
-				78F247BE2A7CD4C10064C258 /* LaunchScreen.storyboard */,
-				78F247BC2A7CD4C10064C258 /* Assets.xcassets */,
-				78F247C12A7CD4C10064C258 /* Info.plist */,
-			);
-			path = Tamagotchi;
-			sourceTree = "<group>";
-		};
 		78F247C72A7CD8070064C258 /* ViewControllerSwiftFile */ = {
 			isa = PBXGroup;
 			children = (
 				78F247B72A7CD4C00064C258 /* MainViewController.swift */,
 				78F247C82A7CD86E0064C258 /* MainCollectionViewCell.swift */,
 				78F247D02A7D12920064C258 /* PopUpViewController.swift */,
-				78F247E22A7EC7EF0064C258 /* Enum.swift */,
 				78F247D42A7D61320064C258 /* TamagotchiMainViewController.swift */,
 				78F247D62A7D74C50064C258 /* SettingViewController.swift */,
 				78F247DE2A7E83C80064C258 /* SettingTableViewCell.swift */,
 				78F247E02A7E8CC40064C258 /* NameChangeViewController.swift */,
-				78F247CC2A7CDD6B0064C258 /* Extension.swift */,
-				78F247CE2A7CF9F20064C258 /* Data.swift */,
-				78F247E42A7FE8500064C258 /* Class.swift */,
 			);
 			path = ViewControllerSwiftFile;
 			sourceTree = "<group>";
@@ -187,13 +230,14 @@
 				78F247CD2A7CDD6B0064C258 /* Extension.swift in Sources */,
 				78F247CF2A7CF9F20064C258 /* Data.swift in Sources */,
 				78F247E32A7EC7EF0064C258 /* Enum.swift in Sources */,
+				787856C22A8E100500246CE0 /* Protocol.swift in Sources */,
 				78F247D52A7D61320064C258 /* TamagotchiMainViewController.swift in Sources */,
 				78F247D12A7D12920064C258 /* PopUpViewController.swift in Sources */,
 				78F247E12A7E8CC40064C258 /* NameChangeViewController.swift in Sources */,
 				78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */,
 				78F247D72A7D74C50064C258 /* SettingViewController.swift in Sources */,
 				78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */,
-				78F247E52A7FE8500064C258 /* Class.swift in Sources */,
+				78F247E52A7FE8500064C258 /* Class + UILabel.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,
 				78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */,

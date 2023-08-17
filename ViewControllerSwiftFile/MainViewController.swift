@@ -10,8 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    static let identifier = "MainViewController"
-    
     var tamagotchi = DetailTamagotchi()
 
     @IBOutlet var collectionView: UICollectionView!
@@ -89,4 +87,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         present(popUpView, animated: true)
     }
     
+}
+
+extension MainViewController: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }

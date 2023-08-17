@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbY-q4-XmH" customClass="PaddingLabel" customModule="Tamagotchi" customModuleProvider="target">
-                                <rect key="frame" x="173" y="444.33333333333331" width="47.333333333333343" height="28"/>
+                                <rect key="frame" x="176" y="444.33333333333331" width="41.333333333333343" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="WR8-an-Vv8"/>
                                 </constraints>
@@ -299,7 +299,7 @@
     </scenes>
     <designables>
         <designable name="pbY-q4-XmH">
-            <size key="intrinsicContentSize" width="47.333333333333336" height="28.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>

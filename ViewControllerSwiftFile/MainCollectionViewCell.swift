@@ -9,8 +9,6 @@ import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "MainCollectionViewCell"
-    
     @IBOutlet var characterImage: UIImageView!
     @IBOutlet var characterName: UILabel!
     
@@ -28,4 +26,10 @@ class MainCollectionViewCell: UICollectionViewCell {
     }
     
     
+}
+
+extension MainCollectionViewCell: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }

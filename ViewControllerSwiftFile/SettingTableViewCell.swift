@@ -8,8 +8,6 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-
-    static let identifier = "SettingTableViewCell"
     
     @IBOutlet var leftImage: UIImageView!
     @IBOutlet var settingTitle: UILabel!
@@ -36,4 +34,10 @@ class SettingTableViewCell: UITableViewCell {
     }
     
 
+}
+
+extension SettingTableViewCell: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }

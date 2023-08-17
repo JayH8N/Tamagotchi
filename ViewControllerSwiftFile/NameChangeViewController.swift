@@ -8,8 +8,6 @@
 import UIKit
 
 class NameChangeViewController: UIViewController {
-    
-    static let identifier = "NameChangeViewController"
 
     @IBOutlet var changeField: UITextField!
     
@@ -58,4 +56,10 @@ class NameChangeViewController: UIViewController {
         }
     }
 
+}
+
+extension NameChangeViewController: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }

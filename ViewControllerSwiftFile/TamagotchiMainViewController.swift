@@ -11,10 +11,7 @@ var myName: String = "대장"
 
 class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
-    static let identifier = "TamagotchiMainViewController"
-    
     var type = 0
-    
     
     var level: Int = 1
     var rice: Int = 0 {
@@ -306,5 +303,11 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+}
+
+extension TamagotchiMainViewController: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
     }
 }

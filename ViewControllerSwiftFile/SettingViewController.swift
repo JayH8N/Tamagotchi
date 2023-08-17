@@ -11,8 +11,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let list = ["내 이름 설정하기", "다마고치 변경하기", "데이터 초기화"]
     let imageName = ["pencil", "moon.fill", "arrow.clockwise"]
-    
-    static let identifier = "SettingViewController"
 
     @IBOutlet var tableView: UITableView!
     
@@ -96,9 +94,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                     UserDefaults.standard.removeObject(forKey: key.description)
                 }
     }
-    
-    
-    
-    
-    
+}
+
+
+extension SettingViewController: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }

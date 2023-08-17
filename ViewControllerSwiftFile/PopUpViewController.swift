@@ -10,8 +10,6 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     
-    static let identifier = "PopUpViewController"
-    
     //값전달
     var image: String?
     var name: String?
@@ -126,5 +124,11 @@ class PopUpViewController: UIViewController {
         nav.modalPresentationStyle = .fullScreen
         
         present(nav, animated: true)
+    }
+}
+
+extension PopUpViewController: ReusableIdentifier {
+    static var identifier: String {
+        String(describing: Self.self)
     }
 }

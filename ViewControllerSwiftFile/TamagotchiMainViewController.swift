@@ -99,7 +99,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         self.title = "\(myName)님의 다마고치"
         setMention()
-        var x = ""
+        //var x = ""
         if type == 0 {
             characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
         } else if type == 1 {
@@ -131,7 +131,6 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     func setMain() {
         mentionImage.image = UIImage(named:"bubble")
         characterName.setUILabel()
-        characterImage.setImageView(characterImage)
 //        if type == 0 {
 //            characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
 //        } else if type == 1 {
@@ -197,6 +196,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         let preLevel = levelCalculate()
     
         level = Int(preLevel) / 10
+        print("\(level)레벨입니다.")
         
         let result = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
         if type == 0 {

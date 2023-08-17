@@ -16,7 +16,6 @@ class MainCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         characterName.setUILabel()
-        characterImage.setImageView(characterImage)
     }
     
     

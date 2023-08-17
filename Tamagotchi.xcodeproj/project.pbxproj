@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		787856C22A8E100500246CE0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856C12A8E100500246CE0 /* Protocol.swift */; };
 		787856C92A8E1E3800246CE0 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856C82A8E1E3800246CE0 /* Extension + UIViewController.swift */; };
-		787856CB2A8E1E7600246CE0 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856CA2A8E1E7600246CE0 /* Extension + UIImageView.swift */; };
 		787856CD2A8E1EA700246CE0 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856CC2A8E1EA700246CE0 /* Extension + UIButton.swift */; };
 		787856CF2A8E1ED000246CE0 /* Extension + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856CE2A8E1ED000246CE0 /* Extension + UILabel.swift */; };
 		787856D12A8E1EEF00246CE0 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856D02A8E1EEF00246CE0 /* Extension + UIView.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		787856C12A8E100500246CE0 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		787856C82A8E1E3800246CE0 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
-		787856CA2A8E1E7600246CE0 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 		787856CC2A8E1EA700246CE0 /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
 		787856CE2A8E1ED000246CE0 /* Extension + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UILabel.swift"; sourceTree = "<group>"; };
 		787856D02A8E1EEF00246CE0 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				787856C82A8E1E3800246CE0 /* Extension + UIViewController.swift */,
-				787856CA2A8E1E7600246CE0 /* Extension + UIImageView.swift */,
 				787856CC2A8E1EA700246CE0 /* Extension + UIButton.swift */,
 				787856CE2A8E1ED000246CE0 /* Extension + UILabel.swift */,
 				787856D02A8E1EEF00246CE0 /* Extension + UIView.swift */,
@@ -256,7 +253,6 @@
 				787856CD2A8E1EA700246CE0 /* Extension + UIButton.swift in Sources */,
 				78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */,
 				78F247E52A7FE8500064C258 /* Class + UILabel.swift in Sources */,
-				787856CB2A8E1E7600246CE0 /* Extension + UIImageView.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
 				787856D32A8E1F0D00246CE0 /* Extension + CALayer.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,

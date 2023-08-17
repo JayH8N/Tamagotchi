@@ -28,8 +28,6 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        characterImage.setImageView(characterImage)
         characterName.setUILabel()
         setPopUpView()
         setLabelBackVeiw()

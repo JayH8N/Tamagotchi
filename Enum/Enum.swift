@@ -8,9 +8,9 @@
 import Foundation
 
 enum CharacterType: Int {
-    case a
-    case b
-    case c
+    case character1
+    case character2
+    case character3
 }
 
 

@@ -99,7 +99,6 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         self.title = "\(myName)님의 다마고치"
         setMention()
-        //var x = ""
         if type == 0 {
             characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
         } else if type == 1 {
@@ -194,7 +193,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
         
         let preLevel = levelCalculate()
-    
+
         level = Int(preLevel) / 10
         print("\(level)레벨입니다.")
         
@@ -248,40 +247,75 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    enum FeedError: Error {
-        case isNOtIntRange
+    
+    //에러함수 정의
+    func feedButtonInputError(text: String, range: Int) throws -> String {
+        
+        if text == "" {
+            return text
+        }
+        
+        guard text.allSatisfy({$0.isNumber}) else {
+            throw FeedError.isNotInt
+        }
+        
+        guard Int(text)! <= range else {
+            throw FeedError.isNotRange
+        }
+        
+        return text
     }
     
-    func validateUserInputError(text: String, range: Int) throws -> () {
-        setMention()
-        let text = text
-        if text == "" {
-            rice += 1
-        } else if  text.allSatisfy({$0.isNumber}) && Int(text)! <= range {
-            rice += Int(text)!
-            feedRice.text = ""
-        } else {
-            throw FeedError.isNOtIntRange
-        }
-    }
     
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
         do {
-            try validateUserInputError(text: feedRice.text!, range: 99)
+            var result = try feedButtonInputError(text: feedRice.text!, range: 99)
+            
+            if result == "" {
+                rice += 1
+            } else {
+                rice += Int(result)!
+                feedRice.text = ""
+            }
+        } catch {
+            if let error = error as? FeedError {
+                switch error {
+                case .isNotInt: return alertOnly1Button(title: "숫자만 입력해주세요")
+                case .isNotRange: return alertOnly1Button(title: "99이하로 입력해주세요")
+                }
+            }
         }
-        catch {
-            alertOnly1Button(title: "잘못된 입력입니다.")
-        }
+//        catch FeedError.isNotInt {
+//            alertOnly1Button(title: "숫자만 입력해주세요")
+//        } catch FeedError.isNotRange {
+//            alertOnly1Button(title: "99이하로 입력해주세요")
+//        }
     }
     
     
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
         do {
-            try validateUserInputError(text: feedWater.text!, range: 49)
+            var result = try feedButtonInputError(text: feedWater.text!, range: 49)
+            
+            if result == "" {
+                water += 1
+            } else {
+                water += Int(result)!
+                feedWater.text = ""
+            }
+        } catch {
+            if let error = error as? FeedError {
+                switch error {
+                case .isNotInt: return alertOnly1Button(title: "숫자만 입력해주세요")
+                case .isNotRange: return alertOnly1Button(title: "49이하로 입력해주세요")
+                }
+            }
         }
-        catch {
-            alertOnly1Button(title: "잘못된 입력입니다.")
-        }
+//        catch FeedError.isNotInt {
+//            alertOnly1Button(title: "숫자만 입력해주세요")
+//        } catch FeedError.isNotRange {
+//            alertOnly1Button(title: "99이하로 입력해주세요")
+//        }
     }
     
     @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {

@@ -30,6 +30,7 @@
 		78F247E12A7E8CC40064C258 /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E02A7E8CC40064C258 /* NameChangeViewController.swift */; };
 		78F247E32A7EC7EF0064C258 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E22A7EC7EF0064C258 /* Enum.swift */; };
 		78F247E52A7FE8500064C258 /* Class + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F247E42A7FE8500064C258 /* Class + UILabel.swift */; };
+		78FF60AF2A8F8006004EBE0A /* Enum + error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60AE2A8F8006004EBE0A /* Enum + error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		78F247E02A7E8CC40064C258 /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
 		78F247E22A7EC7EF0064C258 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		78F247E42A7FE8500064C258 /* Class + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class + UILabel.swift"; sourceTree = "<group>"; };
+		78FF60AE2A8F8006004EBE0A /* Enum + error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				78F247E22A7EC7EF0064C258 /* Enum.swift */,
+				78FF60AE2A8F8006004EBE0A /* Enum + error.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				78F247E12A7E8CC40064C258 /* NameChangeViewController.swift in Sources */,
 				787856CF2A8E1ED000246CE0 /* Extension + UILabel.swift in Sources */,
 				787856D12A8E1EEF00246CE0 /* Extension + UIView.swift in Sources */,
+				78FF60AF2A8F8006004EBE0A /* Enum + error.swift in Sources */,
 				78F247B82A7CD4C00064C258 /* MainViewController.swift in Sources */,
 				78F247D72A7D74C50064C258 /* SettingViewController.swift in Sources */,
 				787856CD2A8E1EA700246CE0 /* Extension + UIButton.swift in Sources */,

@@ -200,7 +200,6 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         if level == 0 {
             level = 1
         }
-        print("\(level)레벨입니다.")
         
         let result = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
         if type == 0 {
@@ -252,6 +251,23 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    //알림창
+    func notification() {
+        let content = UNMutableNotificationContent()
+        content.title = "배고파요"
+        content.body = "하루가 지났습니다, 다마고치에게 먹이를 주세요"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 38600, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "\(Data())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+    }
+    
 //MARK: - Error Handling
     //에러함수 정의
     func feedButtonInputError(text: String, range: Int) throws -> String {
@@ -274,6 +290,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
         do {
+            notification()
             var result = try feedButtonInputError(text: feedRice.text!, range: 99)
             
             if result == "" {
@@ -300,6 +317,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
         do {
+            notification()
             var result = try feedButtonInputError(text: feedWater.text!, range: 49)
             
             if result == "" {

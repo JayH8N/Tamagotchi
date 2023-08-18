@@ -92,6 +92,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         load()
         setTextField()
         basicValue()
+        print("viewDidLoad=====")
     }
     
     
@@ -107,7 +108,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
             characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result3.rawValue)
         }
         //characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
-        print(water)
+        print("viewWillAppear=====")
     }
     
     
@@ -195,6 +196,10 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         let preLevel = levelCalculate()
 
         level = Int(preLevel) / 10
+        
+        if level == 0 {
+            level = 1
+        }
         print("\(level)레벨입니다.")
         
         let result = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
@@ -247,7 +252,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+//MARK: - Error Handling
     //에러함수 정의
     func feedButtonInputError(text: String, range: Int) throws -> String {
         
@@ -317,6 +322,9 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
 //            alertOnly1Button(title: "99이하로 입력해주세요")
 //        }
     }
+    
+//MARK: -
+    
     
     @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {
         view.endEditing(true)

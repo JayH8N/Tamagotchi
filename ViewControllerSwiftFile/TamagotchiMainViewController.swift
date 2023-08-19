@@ -253,10 +253,10 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     
     //알림창
-    func notification() {
+    func notification(text: String) {
         let content = UNMutableNotificationContent()
         content.title = "배고파요"
-        content.body = "하루가 지났습니다, 다마고치에게 먹이를 주세요"
+        content.body = "하루가 지났습니다, 다마고치에게 \(text)주세요!!"
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 38600, repeats: false)
@@ -290,7 +290,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
         do {
-            notification()
+            notification(text: "밥")
             var result = try feedButtonInputError(text: feedRice.text!, range: 99)
             
             if result == "" {
@@ -317,7 +317,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
         do {
-            notification()
+            notification(text: "물")
             var result = try feedButtonInputError(text: feedWater.text!, range: 49)
             
             if result == "" {

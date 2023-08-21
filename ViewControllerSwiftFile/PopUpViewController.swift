@@ -20,6 +20,7 @@ class PopUpViewController: UIViewController {
     @IBOutlet var characterImage: UIImageView!
     @IBOutlet var characterName: UILabel!
     @IBOutlet var popUpView: UIView!
+    @IBOutlet var imageBackView: UIView!
     @IBOutlet var labelBackView: UIView!
     @IBOutlet var introduction: UILabel!
     @IBOutlet var cancelButton: UIButton!
@@ -30,7 +31,7 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
         characterName.setUILabel()
         setPopUpView()
-        setLabelBackVeiw()
+        setBackVeiw()
         setIntroduction()
         setCancelButton()
         setStartButton()
@@ -47,14 +48,15 @@ class PopUpViewController: UIViewController {
         popUpView.layer.cornerRadius = 10
     }
     
-    func setLabelBackVeiw() {
+    func setBackVeiw() {
+        imageBackView.backgroundColor = .clear
         labelBackView.backgroundColor = .clear
-        labelBackView.layer.addBorder([.top], width: 0.7)
     }
     
     func setIntroduction() {
         introduction.backgroundColor = .clear
         introduction.numberOfLines = 0
+        introduction.layer.addBorder([.top], width: 0.7)
     }
     
     func setCancelButton() {

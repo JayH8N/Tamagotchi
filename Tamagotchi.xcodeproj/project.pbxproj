@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782C56332A9330E800090BED /* Class + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C56322A9330E800090BED /* Class + UIButton.swift */; };
 		787856C22A8E100500246CE0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856C12A8E100500246CE0 /* Protocol.swift */; };
 		787856C92A8E1E3800246CE0 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856C82A8E1E3800246CE0 /* Extension + UIViewController.swift */; };
 		787856CD2A8E1EA700246CE0 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787856CC2A8E1EA700246CE0 /* Extension + UIButton.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		782C56322A9330E800090BED /* Class + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class + UIButton.swift"; sourceTree = "<group>"; };
 		787856C12A8E100500246CE0 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		787856C82A8E1E3800246CE0 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		787856CC2A8E1EA700246CE0 /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				78F247E42A7FE8500064C258 /* Class + UILabel.swift */,
+				782C56322A9330E800090BED /* Class + UIButton.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				78F247DF2A7E83C80064C258 /* SettingTableViewCell.swift in Sources */,
 				78F247E52A7FE8500064C258 /* Class + UILabel.swift in Sources */,
 				78F247B42A7CD4C00064C258 /* AppDelegate.swift in Sources */,
+				782C56332A9330E800090BED /* Class + UIButton.swift in Sources */,
 				787856D32A8E1F0D00246CE0 /* Extension + CALayer.swift in Sources */,
 				78F247B62A7CD4C00064C258 /* SceneDelegate.swift in Sources */,
 				78F247CA2A7CD86E0064C258 /* MainCollectionViewCell.swift in Sources */,

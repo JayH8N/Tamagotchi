@@ -81,8 +81,8 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         feedRice.delegate = self
         feedWater.delegate = self
         self.title = "\(myName)님의 다마고치"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: fontColor]
-        self.navigationController?.navigationBar.layer.addBorder([.bottom], width: 0.3)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: fontColor]
+        navigationController?.navigationBar.layer.addBorder([.bottom], width: 0.3)
         self.setBackgroundColor()
         settingButton()
         setMain()
@@ -95,10 +95,15 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         print("viewDidLoad=====")
     }
     
+    override func awakeAfter(using coder: NSCoder) -> Any? {
+            navigationItem.backButtonDisplayMode = .minimal
+            return super.awakeAfter(using: coder)
+        }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "\(myName)님의 다마고치"
+        
         setMention()
         if type == 0 {
             characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result1.rawValue)
@@ -109,6 +114,17 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         }
         //characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
         print("viewWillAppear=====")
+        NotificationCenter.default.addObserver(self, selector: #selector(storeNewNameNotificatioinObserver), name: NSNotification.Name("StoreNewName"), object: nil)
+    }
+    
+    @objc func storeNewNameNotificatioinObserver(notification: NSNotification) {
+        
+        if let newValue = notification.userInfo?["NewValue"] as? String {
+            myName = newValue
+            print("값전달", myName)
+            title = "\(myName)님의 다마고치"
+        }
+        
     }
     
     
@@ -118,13 +134,19 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem?.tintColor = fontColor
     }
     
+    
+    
     @objc
     func settingButtonClicked(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
+//        let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
+//
+//        
+//        navigationController?.pushViewController(vc, animated: true)
         
         
-        navigationController?.pushViewController(vc, animated: true)
+        transition(style: .push, sbName: "TamagotchiMain", viewController: SettingViewController.self, animate: true)
+        
     }
     
     
@@ -219,7 +241,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
             x = ForKey.result3.rawValue
         }
         
-        if level == 10 {
+        if level >= 10 {
             characterInfo.text = UserDefaults.standard.string(forKey: x)
             level = 9
             characterImage.image = UIImage(named: "\(type + 1)-\(level)")
@@ -291,7 +313,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     @IBAction func feedRiceButtonClicked(_ sender: UIButton) {
         do {
             notification(text: "밥")
-            var result = try feedButtonInputError(text: feedRice.text!, range: 99)
+            let result = try feedButtonInputError(text: feedRice.text!, range: 99)
             
             if result == "" {
                 rice += 1
@@ -318,7 +340,7 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
     @IBAction func feedWaterButtonClicked(_ sender: UIButton) {
         do {
             notification(text: "물")
-            var result = try feedButtonInputError(text: feedWater.text!, range: 49)
+            let result = try feedButtonInputError(text: feedWater.text!, range: 49)
             
             if result == "" {
                 water += 1

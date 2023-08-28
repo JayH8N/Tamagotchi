@@ -320,6 +320,12 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="Zzk-Ll-vQD">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+        <designable name="mWf-hF-ac6">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
         <designable name="pbY-q4-XmH">
             <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>

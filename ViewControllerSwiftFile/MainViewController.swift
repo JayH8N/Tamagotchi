@@ -78,10 +78,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         let item = DetailTamagotchi.shared.list[indexPath.item]
         popUpView.callValue(data: item)
+        
 
         popUpView.type = CharacterType(rawValue: indexPath.item)
 
-
+        
+        //???: - 이거 왜 값전달 옵셔널로 받지?
+        //제네릭활용 함수 화면전환
+        //transition(style: .present, sbName: "Main", viewController: PopUpViewController.self, PresentationStyle: .overFullScreen, animate: true)
+        
+        //기존 화면전환코드
         popUpView.modalPresentationStyle = .overFullScreen
         present(popUpView, animated: true)
     }

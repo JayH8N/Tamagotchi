@@ -8,6 +8,15 @@
 import UIKit
 
 extension UIViewController {
+    
+    enum TransitionStyle {
+        case present //네이게이션 없이 present
+        case presentNavigation //네이베이션 임베드 된 present
+        case push
+    }
+    
+
+    
     func setBackgroundColor() {
         view.backgroundColor = themeColor
     }
@@ -31,4 +40,30 @@ extension UIViewController {
         
         present(alert, animated: true)
     }
+    
+    
+    //화면전환
+    func transition<T: UIViewController>(style: TransitionStyle, sbName: String, viewController: T.Type, PresentationStyle: UIModalPresentationStyle? = nil, TransitionStyle: UIModalTransitionStyle? = nil, animate: Bool) {
+        
+        
+        let sb = UIStoryboard(name: sbName, bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: String(describing: viewController)) as?  T  else { return }
+        
+        
+        switch style {
+        case .present:
+            vc.modalPresentationStyle = PresentationStyle ?? .automatic
+            present(vc, animated: animate)
+        case .presentNavigation:
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalTransitionStyle = TransitionStyle ?? .coverVertical
+            nav.modalPresentationStyle = PresentationStyle ?? .automatic
+            present(nav, animated: animate)
+        case .push:
+            navigationController?.pushViewController(vc, animated: animate)
+        }
+    }
+
+    
+    
 }

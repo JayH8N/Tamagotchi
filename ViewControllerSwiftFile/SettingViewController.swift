@@ -18,7 +18,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         self.title = "설정"
-        self.navigationController?.navigationBar.topItem?.title = ""
+        //self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = fontColor
         self.setBackgroundColor()
         tableView.backgroundColor = themeColor
@@ -50,7 +50,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             cell.changedName.text = myName
         }
-        
         return cell
     }
     
@@ -59,18 +58,22 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let row = indexPath.row
         
         if row == 0 {
-            let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as! NameChangeViewController
-
-            navigationController?.pushViewController(vc, animated: true)
+//            let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as! NameChangeViewController
+//
+//            navigationController?.pushViewController(vc, animated: true)
+            
+            transition(style: .push, sbName: "TamagotchiMain", viewController: NameChangeViewController.self, animate: true)
             
         } else if row == 1 {
             
             UserDefaults.standard.set(true, forKey: ForKey.changeCharacter.rawValue)
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//
+//            navigationController?.pushViewController(vc, animated: true)
             
-            navigationController?.pushViewController(vc, animated: true)
+            transition(style: .push, sbName: "Main", viewController: MainViewController.self, animate: true)
             
         } else {
             self.alert(title: "데이터초기화", message: "정말 다시 처음부터 시작하실 건가용?", handler: {action in self.reset()})
@@ -81,15 +84,19 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func reset() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//
+//
+//        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalTransitionStyle = .crossDissolve
+//        nav.modalPresentationStyle = .fullScreen
+//
+//        present(nav, animated: true)
+        
+        transition(style: .presentNavigation, sbName: "Main", viewController: MainViewController.self, PresentationStyle: .fullScreen, TransitionStyle: .crossDissolve, animate: true)
         
         
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalTransitionStyle = .crossDissolve
-        nav.modalPresentationStyle = .fullScreen
-        
-        present(nav, animated: true)
         
         for key in UserDefaults.standard.dictionaryRepresentation().keys {
                     UserDefaults.standard.removeObject(forKey: key.description)

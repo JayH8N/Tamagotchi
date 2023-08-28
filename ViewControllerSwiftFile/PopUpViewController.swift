@@ -82,6 +82,8 @@ class PopUpViewController: UIViewController {
     func callValue() {
         guard let image, let name, let intro else {
             characterImage.image = UIImage(systemName: "questionmark")
+            characterName.text = "데이터 없어요"
+            introduction.text = "데이터 없어요"
             return }
         characterImage.image = UIImage(named: image)
         characterName.text = name
@@ -110,23 +112,30 @@ class PopUpViewController: UIViewController {
         let sb = UIStoryboard(name: "TamagotchiMain", bundle: nil)
         let main = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
         
+        
         main.type = type.rawValue
         UserDefaults.standard.set(main.type, forKey: "type")
+                
+//        let nav = UINavigationController(rootViewController: main)
+//        nav.modalPresentationStyle = .overFullScreen
+//        present(nav, animated: false)
         
-        let nav = UINavigationController(rootViewController: main)
-        nav.modalPresentationStyle = .overFullScreen
-        present(nav, animated: false)
+        transition(style: .presentNavigation, sbName: "TamagotchiMain", viewController: TamagotchiMainViewController.self, PresentationStyle: .overFullScreen, animate: false)
     }
+    
+    
     func firstViewBack() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
         
         
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalTransitionStyle = .crossDissolve
-        nav.modalPresentationStyle = .fullScreen
+//        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalTransitionStyle = .crossDissolve
+//        nav.modalPresentationStyle = .fullScreen
+//        present(nav, animated: true)
         
-        present(nav, animated: true)
+        
+        transition(style: .presentNavigation, sbName: "Main", viewController: MainViewController.self, PresentationStyle: .fullScreen, TransitionStyle: .crossDissolve, animate: true)
     }
 }
 

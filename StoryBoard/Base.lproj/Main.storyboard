@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAd-LG-DPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489.3129770992364" y="-223.94366197183101"/>
+            <point key="canvasLocation" x="2596" y="-100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pLM-UY-fXu">
@@ -210,6 +210,11 @@
             <point key="canvasLocation" x="632.82442748091603" y="-100"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Zp5-AR-EOm">
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

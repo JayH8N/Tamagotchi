@@ -39,7 +39,8 @@ class NameChangeViewController: UIViewController {
     
     func nameChangeError(text: String) throws -> () {
         if text.count >= 2 && text.count <= 6 {
-            myName = text
+            //myName = text
+            NotificationCenter.default.post(name: NSNotification.Name("StoreNewName"), object: nil, userInfo: ["NewValue": text])
             navigationController?.popViewController(animated: true)
         } else {
             throw NameError.isNotRange

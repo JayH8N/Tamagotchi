@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d63-h6-U3U" customClass="PaddingLabel" customModule="Tamagotchi" customModuleProvider="target">
-                        <rect key="frame" x="39.333333333333329" y="132" width="47.333333333333329" height="28"/>
+                        <rect key="frame" x="42.333333333333329" y="132" width="41.333333333333329" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="le7-DT-qKH"/>
                         </constraints>
@@ -61,7 +61,7 @@
     </objects>
     <designables>
         <designable name="d63-h6-U3U">
-            <size key="intrinsicContentSize" width="47.333333333333336" height="28.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
 </document>

@@ -93,6 +93,8 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
         setTextField()
         basicValue()
         print("viewDidLoad=====")
+        print("viewWillAppear=====")
+        NotificationCenter.default.addObserver(self, selector: #selector(storeNewNameNotificatioinObserver), name: NSNotification.Name("StoreNewName"), object: nil)
     }
     
     override func awakeAfter(using coder: NSCoder) -> Any? {
@@ -113,12 +115,12 @@ class TamagotchiMainViewController: UIViewController, UITextFieldDelegate {
             characterInfo.text = UserDefaults.standard.string(forKey: ForKey.result3.rawValue)
         }
         //characterInfo.text = "LV\(level) · 밥알 \(rice)개 · 물방울 \(water)개"
-        print("viewWillAppear=====")
-        NotificationCenter.default.addObserver(self, selector: #selector(storeNewNameNotificatioinObserver), name: NSNotification.Name("StoreNewName"), object: nil)
+//        print("viewWillAppear=====")
+//        NotificationCenter.default.addObserver(self, selector: #selector(storeNewNameNotificatioinObserver), name: NSNotification.Name("StoreNewName"), object: nil)
     }
     
     @objc func storeNewNameNotificatioinObserver(notification: NSNotification) {
-        
+        print("ddddd")
         if let newValue = notification.userInfo?["NewValue"] as? String {
             myName = newValue
             print("값전달", myName)
